@@ -37,7 +37,7 @@ s=E.pop(),O=E.length?E.join("/")+"/":"./",q.baseUrl=O),s=s.replace(Q,""),g.jsExt
 b.readyState)return N=b}),e=N;e&&(b||(b=e.getAttribute("data-requiremodule")),g=F[e.getAttribute("data-requirecontext")])}(g?g.defQueue:R).push([b,c,d])};define.amd={jQuery:!0};g.exec=function(b){return eval(b)};g(q)}})(this);
 (function() {
   require.config({
-    baseUrl: '/javascripts'
+    baseUrl: 'javascripts'
   });
 
   require(['first_words', 'second_words', 'third_words'], function() {
