@@ -1,7 +1,7 @@
 #=  require_tree ./libs
 
 require.config
-  baseUrl: '/javascripts'
+  baseUrl: 'javascripts'
 
 
 require ['first_words', 'second_words', 'third_words'], ->
