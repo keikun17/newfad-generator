@@ -14,10 +14,16 @@ require ['first_words', 'second_words', 'third_words'], ->
 
   bullshit_link.addEventListener "click", (e) ->
     e.preventDefault()
+    generate_bullshit()
+
+  generate_bullshit = ->
 
     first_word = firsts[Math.floor(Math.random()*firsts.length)];
     second_word = seconds[Math.floor(Math.random()*seconds.length)];
     third_word = thirds[Math.floor(Math.random()*thirds.length)];
 
     bullshit.innerHTML = "#{first_word} #{second_word} #{third_word}"
+
+  generate_bullshit()
+
 
