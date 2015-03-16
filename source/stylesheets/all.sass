@@ -1,8 +1,10 @@
 @import 'mediaquery'
 
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700)
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic)
 
-$bullshit-font: 'Roboto Slab', serif
+$bullshit-font: 'Playfair Display', serif
+$link-font: 'Roboto Slab', serif
 
 html, body
   height: 100%
@@ -21,11 +23,13 @@ html, body
   justify-content: center
 
 
-#that-guy
+#bullshit
   font-family: $bullshit-font
+  font-style: italic
   // text-align: center
 
-.and-another-one 
+.and-another-one
+  font-family: $link-font
   a
     text-decoration: none
 
