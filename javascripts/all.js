@@ -41,20 +41,24 @@ b.readyState)return N=b}),e=N;e&&(b||(b=e.getAttribute("data-requiremodule")),g=
   });
 
   require(['first_words', 'second_words', 'third_words'], function() {
-    var bullshit, bullshit_link, firsts, seconds, thirds;
+    var bullshit, bullshit_link, firsts, generate_bullshit, seconds, thirds;
     firsts = require('first_words');
     seconds = require('second_words');
     thirds = require('third_words');
     bullshit = document.querySelector('#bullshit');
     bullshit_link = document.querySelector('#talkshit');
-    return bullshit_link.addEventListener("click", function(e) {
-      var first_word, second_word, third_word;
+    bullshit_link.addEventListener("click", function(e) {
       e.preventDefault();
+      return generate_bullshit();
+    });
+    generate_bullshit = function() {
+      var first_word, second_word, third_word;
       first_word = firsts[Math.floor(Math.random() * firsts.length)];
       second_word = seconds[Math.floor(Math.random() * seconds.length)];
       third_word = thirds[Math.floor(Math.random() * thirds.length)];
       return bullshit.innerHTML = first_word + " " + second_word + " " + third_word;
-    });
+    };
+    return generate_bullshit();
   });
 
 }).call(this);
