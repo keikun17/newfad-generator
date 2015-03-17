@@ -1,24 +1,30 @@
 @media all and (min-width: 960px) {
   /* line 2, /Users/Valerian/Projects/newfad-generator/source/stylesheets/mediaquery.sass */
   #bullshit {
-    font-size: 54px; }
+    font-size: 54px;
+    line-height: 91px; }
 
-  /* line 4, /Users/Valerian/Projects/newfad-generator/source/stylesheets/mediaquery.sass */
-  .and-another-one {
-    font-size: 18px; } }
+  /* line 5, /Users/Valerian/Projects/newfad-generator/source/stylesheets/mediaquery.sass */
+  .words span {
+    font-size: 18px;
+    line-height: 30px; } }
 @media all and (max-width: 959px) and (min-width: 600px) {
-  /* line 8, /Users/Valerian/Projects/newfad-generator/source/stylesheets/mediaquery.sass */
+  /* line 11, /Users/Valerian/Projects/newfad-generator/source/stylesheets/mediaquery.sass */
   #bullshit {
-    font-size: 30px; }
+    font-size: 30px;
+    line-height: 51px; }
 
-  /* line 10, /Users/Valerian/Projects/newfad-generator/source/stylesheets/mediaquery.sass */
-  .and-another-one {
-    font-size: 16px; } }
-@media all and (max-width: 599px) and (min-width: 320px) {
   /* line 14, /Users/Valerian/Projects/newfad-generator/source/stylesheets/mediaquery.sass */
+  .words span {
+    font-size: 16px;
+    line-height: 27px; } }
+@media all and (max-width: 599px) and (min-width: 320px) {
+  /* line 19, /Users/Valerian/Projects/newfad-generator/source/stylesheets/mediaquery.sass */
   #bullshit {
-    font-size: 25px; }
+    font-size: 25px;
+    line-height: 42.5px; }
 
-  /* line 16, /Users/Valerian/Projects/newfad-generator/source/stylesheets/mediaquery.sass */
-  .and-another-one {
-    font-size: 12px; } }
+  /* line 22, /Users/Valerian/Projects/newfad-generator/source/stylesheets/mediaquery.sass */
+  .words span {
+    font-size: 12px;
+    line-height: 20px; } }
