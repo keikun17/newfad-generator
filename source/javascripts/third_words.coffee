@@ -9,6 +9,7 @@ define 'third_words', ->
     "Prototyping",
     "Stories",
     "UX",
-    "Estimation"
+    "Estimation",
+    "Community"
   ]
 
