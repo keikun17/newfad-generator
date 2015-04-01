@@ -10,6 +10,7 @@ define 'third_words', ->
     "Stories",
     "UX",
     "Estimation",
-    "Community"
+    "Community",
+    "Product"
   ]
 

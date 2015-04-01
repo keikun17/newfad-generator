@@ -27,6 +27,7 @@ define 'first_words', ->
     "Convention",
     "Configuration",
     "Gender-equality",
-    "Sentient"
+    "Sentient",
+    "Minimum"
   ]
 
