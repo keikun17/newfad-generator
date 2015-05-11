@@ -1,5 +1,6 @@
 define 'first_words', ->
   return [
+    "Full",
     "Behavior",
     "Test",
     "User",
