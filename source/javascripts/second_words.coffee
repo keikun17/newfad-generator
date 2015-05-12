@@ -5,7 +5,9 @@ define 'second_words' , ->
     "Release",
     "Focused",
     "Learning",
-    "Over",
-    "Viable"
+    "Viable",
+    "Surveilance",
+    "Experience",
+    "Equality"
   ]
 
