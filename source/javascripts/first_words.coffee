@@ -29,6 +29,8 @@ define 'first_words', ->
     "Configuration",
     "Gender",
     "Sentient",
-    "Minimum"
+    "Minimum",
+    "Growing",
+    "Real-World"
   ]
 

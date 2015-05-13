@@ -8,6 +8,8 @@ define 'second_words' , ->
     "Viable",
     "Surveilance",
     "Experience",
-    "Equality"
+    "Equality",
+    "Oriented",
+    "Working"
   ]
 
