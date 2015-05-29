@@ -27,7 +27,6 @@ require ['first_words', 'second_words', 'third_words'], ->
     i2 = seconds.indexOf(w2)
     i3 = thirds.indexOf(w3)
 
-    console.log("?s=#{i1}_#{i2}_#{i3}")
     window.history.pushState('', '' , "?s=#{i1}_#{i2}_#{i3}")
 
   generate_bullshit = ->
