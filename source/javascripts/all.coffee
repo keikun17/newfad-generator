@@ -41,15 +41,18 @@ require ['first_words', 'second_words', 'third_words'], ->
     spread_that_thang()
 
   spread_that_thang = ->
-    tweetlink.href = "https://twitter.com/intent/tweet?text=For our next meetup, I'll do a talk about #{bullshit.innerHTML} and why you should do it too"
+    string = "For our next meetup I'll talk abt #{bullshit.innerHTML} & why you should do it too #{window.location.href}"
+    tweetlink.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(string)
 
   saved = window.location.search.replace('?s=','').split('_')
 
   if saved.length == 3
-    first_word = firsts[saved[0]]
-    second_word = seconds[saved[1]]
-    third_word = thirds[saved[2]]
-    set_bullshit_text(first_word, second_word, third_word)
+    w1 = firsts[saved[0]]
+    w2 = seconds[saved[1]]
+    w3 = thirds[saved[2]]
+
+    set_bullshit_text(w1, w2, w3)
+    spread_that_thang()
   else
     generate_bullshit()
 
