@@ -29,7 +29,7 @@ require ['first_words', 'second_words', 'third_words'], ->
 
     window.history.pushState('', '' , "?s=#{i1}_#{i2}_#{i3}")
 
-  generate_bullshit = ->
+  generate_bullshit = =>
 
     w1 = firsts[Math.floor(Math.random()*firsts.length)];
     w2 = seconds[Math.floor(Math.random()*seconds.length)];
@@ -40,21 +40,35 @@ require ['first_words', 'second_words', 'third_words'], ->
     rebuild_permalink(w1,w2,w3)
     spread_that_thang()
 
-  spread_that_thang = ->
-    string = "For our next meetup I'll talk abt #{bullshit.innerHTML} & why you should do it too #{window.location.href}"
-    tweetlink.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(string)
-
-  saved = window.location.search.replace('?s=','').split('_')
-
-  if saved.length == 3
+  grabshit_from_history = ->
+    saved = get_saved()
     w1 = firsts[saved[0]]
     w2 = seconds[saved[1]]
     w3 = thirds[saved[2]]
 
     set_bullshit_text(w1, w2, w3)
     spread_that_thang()
-  else
-    generate_bullshit()
+
+  get_saved = ->
+    saved = window.location.search.replace('?s=','').split('_')
+    saved
+
+  spread_that_thang = ->
+    string = "For our next meetup I'll talk abt #{bullshit.innerHTML} & why you should do it too #{window.location.href}"
+    tweetlink.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(string)
+
+  run = ->
+    saved = get_saved()
+
+    if saved.length == 3
+      grabshit_from_history()
+    else
+      generate_bullshit()
+
+  window.addEventListener 'popstate', (event) ->
+    run()
+
+  run()
 
 
 
