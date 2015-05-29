@@ -41,7 +41,7 @@ b.readyState)return N=b}),e=N;e&&(b||(b=e.getAttribute("data-requiremodule")),g=
   });
 
   require(['first_words', 'second_words', 'third_words'], function() {
-    var bullshit, bullshit_link, firsts, generate_bullshit, seconds, spread_that_thang, thirds, tweetlink;
+    var bullshit, bullshit_link, firsts, generate_bullshit, rebuild_permalink, saved, seconds, set_bullshit_text, spread_that_thang, thirds, tweetlink, w1, w2, w3;
     firsts = require('first_words');
     seconds = require('second_words');
     thirds = require('third_words');
@@ -52,18 +52,40 @@ b.readyState)return N=b}),e=N;e&&(b||(b=e.getAttribute("data-requiremodule")),g=
       e.preventDefault();
       return generate_bullshit();
     });
+    set_bullshit_text = function(w1, w2, w3) {
+      return bullshit.innerHTML = w1 + " " + w2 + " " + w3;
+    };
+    rebuild_permalink = function(w1, w2, w3) {
+      var i1, i2, i3;
+      i1 = firsts.indexOf(w1);
+      i2 = seconds.indexOf(w2);
+      i3 = thirds.indexOf(w3);
+      return window.history.pushState('', '', "?s=" + i1 + "_" + i2 + "_" + i3);
+    };
     generate_bullshit = function() {
-      var first_word, second_word, third_word;
-      first_word = firsts[Math.floor(Math.random() * firsts.length)];
-      second_word = seconds[Math.floor(Math.random() * seconds.length)];
-      third_word = thirds[Math.floor(Math.random() * thirds.length)];
-      bullshit.innerHTML = first_word + " " + second_word + " " + third_word;
+      var w1, w2, w3;
+      w1 = firsts[Math.floor(Math.random() * firsts.length)];
+      w2 = seconds[Math.floor(Math.random() * seconds.length)];
+      w3 = thirds[Math.floor(Math.random() * thirds.length)];
+      set_bullshit_text(w1, w2, w3);
+      rebuild_permalink(w1, w2, w3);
       return spread_that_thang();
     };
     spread_that_thang = function() {
-      return tweetlink.href = "https://twitter.com/intent/tweet?text=For our next meetup, I'll do a talk about " + bullshit.innerHTML + " and why you should do it too";
+      var string;
+      string = "For our next meetup I'll talk abt " + bullshit.innerHTML + " & why you should do it too " + window.location.href;
+      return tweetlink.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(string);
     };
-    return generate_bullshit();
+    saved = window.location.search.replace('?s=', '').split('_');
+    if (saved.length === 3) {
+      w1 = firsts[saved[0]];
+      w2 = seconds[saved[1]];
+      w3 = thirds[saved[2]];
+      set_bullshit_text(w1, w2, w3);
+      return spread_that_thang();
+    } else {
+      return generate_bullshit();
+    }
   });
 
 }).call(this);
