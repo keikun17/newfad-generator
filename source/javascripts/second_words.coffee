@@ -10,6 +10,7 @@ define 'second_words' , ->
     "Experience",
     "Equality",
     "Oriented",
-    "Working"
+    "Working",
+    "Monolith"
   ]
 
